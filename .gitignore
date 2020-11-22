@@ -12,4 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
-/app/build.gradle
+#Google play store ->Keys of the app
+/keys
+Constants.kt
