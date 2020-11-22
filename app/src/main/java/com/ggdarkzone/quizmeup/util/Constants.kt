@@ -1,0 +1,99 @@
+package com.ggdarkzone.quizmeup.util
+
+const val GENERAL_KNOWLEDGE_STRING = "General Knowledge"//9
+const val GENERAL_KNOWLEDGE_VALUE = 9
+const val ENTERTAINMENT_BOOKS_STRING = "Books"//10
+const val ENTERTAINMENT_BOOKS_VALUE = 10
+const val ENTERTAINMENT_FILM_STRING = "Films"//11
+const val ENTERTAINMENT_FILM_VALUE = 11
+const val ENTERTAINMENT_MUSIC_STRING = "Music"//12
+const val ENTERTAINMENT_MUSIC_VALUE = 12
+const val ENTERTAINMENT_MUSICAL_THEATERS_STRING = "Musical & Theaters"//13
+const val ENTERTAINMENT_MUSICAL_THEATERS_VALUE = 13
+const val ENTERTAINMENT_TELEVISION_STRING = "Television"//14
+const val ENTERTAINMENT_TELEVISION_VALUE = 14
+const val ENTERTAINMENT_VIDEO_GAMES_STRING = "Video Game"//15
+const val ENTERTAINMENT_VIDEO_GAMES_VALUE = 15
+const val ENTERTAINMENT_BOARD_GAMES_STRING = "Board Games"//16
+const val ENTERTAINMENT_BOARD_GAMES_VALUE = 16
+const val SCIENCE_NATURE_STRING = "Science & Nature"//17
+const val SCIENCE_NATURE_VALUE = 17
+const val SCIENCE_COMPUTERS_STRING = "Science: Computers"//18
+const val SCIENCE_COMPUTERS_VALUE = 18
+const val SCIENCE_MATHEMATICS_STRING = "Science: Mathematics"//19
+const val SCIENCE_MATHEMATICS_VALUE = 19
+const val MYTHOLOGY_STRING = "Mythology"//20
+const val MYTHOLOGY_VALUE = 20
+const val SPORTS_STRING = "Sports"//21
+const val SPORTS_VALUE = 21
+const val GEOGRAPHY_STRING = "Geography"//22
+const val GEOGRAPHY_VALUE = 22
+const val HISTORY_STRING = "History"//23
+const val HISTORY_VALUE = 23
+const val POLITICS_STRING = "Politics"//24
+const val POLITICS_VALUE = 24
+const val ART_STRING = "Art"//25
+const val ART_VALUE = 25
+const val CELEBRITIES_STRING = "Celebrities"//26
+const val CELEBRITIES_VALUE = 26
+const val ANIMALS_STRING = "Animals"//27
+const val ANIMALS_VALUE = 27
+const val VEHICLES_STRING = "Vehicles"//28
+const val VEHICLES_VALUE = 28
+const val ENTERTAINMENT_COMICS_STRING = "Comics"//29
+const val ENTERTAINMENT_COMICS_VALUE = 29
+const val SCIENCE_GADGETS_STRING = "Science: Gadgets"//30
+const val SCIENCE_GADGETS_VALUE = 30
+const val ENTERTAINMENT_JAPANESE_ANIME_MANGA_STRING = "Japanese Anime & Manga"//31
+const val ENTERTAINMENT_JAPANESE_ANIME_MANGA_VALUE = 31
+const val ENTERTAINMENT_CARTOON_ANIMATIONS_STRING = "Cartoon & Animations"//32
+const val ENTERTAINMENT_CARTOON_ANIMATIONS_VALUE = 32
+
+//Preferences
+const val MY_SCORE_CURRENT_SESSION = "com.ggdarkzone.quizmeup.score_current_session"
+const val MY_LIVES_CURRENT_SESSION = "com.ggdarkzone.quizmeup.lives_current_session"
+const val MY_HIGH_SCORE = "com.ggdarkzone.quizmeup.high_score"
+const val MY_INDEX_STATE = "com.ggdarkzone.quizmeup.index_state"
+const val MY_DIFFICULTY_MODE = "com.ggdarkzone.quizmeup.difficulty_mode"
+const val PREFS_NAME = "com.ggdarkzone.quizmeup.saved_parameters"
+const val MY_APP_FIRST_RUN = "com.ggdarkzone.quizmeup.app_first_run"
+const val MY_APP_SOUND_SETTINGS = "com.ggdarkzone.quizmeup.application_sound_settings"
+const val MY_USER_TOKEN_VALID = "com.ggdarkzone.quizmeup.token_valid"
+const val MY_TOKEN_LAST_REFRESH_TIME = "com.ggdarkzone.quizmeup.token_last_refresh_time"
+
+//Preferences checked categories
+const val MY_CHECKED_ANIMALS = "com.ggdarkzone.quizmeup.checked_animals"
+const val MY_CHECKED_ART = "com.ggdarkzone.quizmeup.checked_art"
+const val MY_CHECKED_BOARD_GAMES = "com.ggdarkzone.quizmeup.checked_board_games"
+const val MY_CHECKED_BOOKS = "com.ggdarkzone.quizmeup.checked_books"
+const val MY_CHECKED_CARTOON_ANIMATIONS = "com.ggdarkzone.quizmeup.checked_cartoon_animations"
+const val MY_CHECKED_CELEBRITIES = "com.ggdarkzone.quizmeup.checked_celebrities"
+const val MY_CHECKED_COMICS = "com.ggdarkzone.quizmeup.checked_comics"
+const val MY_CHECKED_FILMS = "com.ggdarkzone.quizmeupn.checked_films"
+const val MY_CHECKED_GENERAL_KNOWLEDGE = "com.ggdarkzone.quizmeup.checked_general_knowledge"
+const val MY_CHECKED_GEOGRAPHY = "com.ggdarkzone.quizmeup.checked_geography"
+const val MY_CHECKED_HISTORY = "com.ggdarkzone.quizmeup.checked_history"
+const val MY_CHECKED_ANIME_MANGA = "com.ggdarkzone.quizmeupn.checked_anime_manga"
+const val MY_CHECKED_MUSIC = "com.ggdarkzone.quizmeup.high_checked_music"
+const val MY_CHECKED_MUSICAL_THEATERS = "com.ggdarkzone.quizmeup.high_checked_musical_theaters"
+const val MY_CHECKED_MYTHOLOGY = "com.ggdarkzone.quizmeup.checked_mythology"
+const val MY_CHECKED_POLITICS = "com.ggdarkzone.quizmeup.checked_politics"
+const val MY_CHECKED_SCIENCE_COMPUTERS = "com.ggdarkzone.quizmeup.checked_science_computers"
+const val MY_CHECKED_SCIENCE_GADGETS = "com.ggdarkzone.quizmeup.checked_science_gadgets"
+const val MY_CHECKED_SCIENCE_MATHEMATICS = "com.ggdarkzone.quizmeup.checked_science_mathematics"
+const val MY_CHECKED_SCIENCE_NATURE = "com.ggdarkzone.quizmeup.checked_science_nature"
+const val MY_CHECKED_SPORTS = "com.ggdarkzone.quizmeup.checked_sports"
+const val MY_CHECKED_TELEVISION = "com.ggdarkzone.quizmeup.checked_television"
+const val MY_CHECKED_VEHICLES = "com.ggdarkzone.quizmeup.checked_vehicles"
+const val MY_CHECKED_VIDEO_GAMES = "com.ggdarkzone.quizmeup.checked_video_games"
+
+const val MY_DIFFICULTY_EASY ="easy"
+const val MY_DIFFICULTY_MEDIUM ="medium"
+const val MY_DIFFICULTY_HARD ="hard"
+const val MY_DIFFICULTY_ALL ="all"
+
+const val QUESTION_MAX_VALUE_EASY = 120.0
+const val QUESTION_MAX_VALUE_MEDIUM = 220.0
+const val QUESTION_MAX_VALUE_HARD = 320.0
+const val QUESTION_TIMER: Int = 15
+

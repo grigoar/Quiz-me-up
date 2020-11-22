@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E383F"
+    tools:context=".controller.SettingsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="@drawable/background_questions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_navigation"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16sp"
+        android:layout_marginBottom="10sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="10dp">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="backButtonClickedToSelectCategories"
+
+        android:layout_marginStart="16sp"
+        android:scaleType="center"
+        android:soundEffectsEnabled="false"
+        app:backgroundTint="@color/colorYellow"
+        app:fabSize="mini"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout_navigation">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10sp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout_navigation"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="#FF1744"
+                    android:fontFamily="@font/happy_monkey"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Difficulty"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/button_settings_easy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/checkbox"
+                            android:fontFamily="@font/happy_monkey"
+                            android:onClick="buttonDifficultySelected"
+                            android:soundEffectsEnabled="false"
+                            android:text="Easy"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView_check_easy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/check_circle_icon"
+                            android:translationZ="10dp" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/button_settings_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/checkbox"
+                            android:fontFamily="@font/happy_monkey"
+                            android:onClick="buttonDifficultySelected"
+                            android:soundEffectsEnabled="false"
+                            android:text="Medium"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView_check_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/check_circle_icon"
+                            android:translationZ="10dp" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <Button
+                            android:id="@+id/button_settings_hard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/checkbox"
+                            android:fontFamily="@font/happy_monkey"
+                            android:onClick="buttonDifficultySelected"
+                            android:soundEffectsEnabled="false"
+                            android:text="Hard"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView_check_hard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/check_circle_icon"
+                            android:translationZ="10dp" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/button_settings_all"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/checkbox"
+                            android:fontFamily="@font/happy_monkey"
+                            android:onClick="buttonDifficultySelected"
+                            android:soundEffectsEnabled="false"
+                            android:text="Mixed"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView_check_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/check_circle_icon"
+                            android:translationZ="10dp" />
+
+                    </FrameLayout>
+
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#FF1744"
+                    android:fontFamily="@font/happy_monkey"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Sound"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imageView_sound_on"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/volume_on_icon"
+                            android:translationZ="10dp" />
+
+                        <Button
+                            android:id="@+id/button_settings_sound_yes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/happy_monkey"
+                            android:onClick="soundONClicked"
+                            android:soundEffectsEnabled="false"
+                            android:text="Yes"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imageView_sound_off"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/volume_off_icon"
+                            android:translationZ="10dp" />
+
+                        <Button
+                            android:id="@+id/button_settings_sound_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/happy_monkey"
+                            android:onClick="soundOFFClicked"
+                            android:soundEffectsEnabled="false"
+                            android:text="No"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

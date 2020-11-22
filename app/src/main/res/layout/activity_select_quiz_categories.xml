@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E383F"
+    tools:context=".controller.SelectQuizCategoriesActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="@drawable/background_questions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButtonSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="buttonOpenSettingsActivity"
+
+                    android:scaleType="center"
+                    android:soundEffectsEnabled="false"
+                    app:backgroundTint="@color/colorYellow"
+                    app:fabSize="mini"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/settings_icon" />
+
+                <Button
+                    android:id="@+id/buttons_start_quiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center|center_horizontal|center_vertical"
+                    android:fontFamily="@font/happy_monkey"
+                    android:onClick="startGameActivity"
+                    android:padding="8sp"
+                    android:soundEffectsEnabled="false"
+                    android:text="Start Game"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButtonVolume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="buttonToggleVolume"
+                    android:soundEffectsEnabled="false"
+                    app:backgroundTint="@color/colorYellow"
+                    app:fabSize="mini"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/volume_on_icon" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView_select_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/happy_monkey"
+                android:padding="8sp"
+                android:text="Select which categories you want to play:"
+                android:textColor="@android:color/secondary_text_light"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linear_layout_all_categories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/animal_icon_pets" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_animals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#fff"
+                        android:clickable="false"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Animals"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_animals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/art_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_art"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="0dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Art"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_art"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/board_games_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_board_games"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="4dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Board Games"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_board_games"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/book_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_books"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Books"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_books"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/cartoon_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_cartoon_animation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Cartoon Animations"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_cartoon_animation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/celebrities_icon_generation" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_celebrities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Celebrities"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_celebrities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/comics_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_comics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Comics"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_comics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/films_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_film"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Films"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_films"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/general_knowledge_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_general_knowledge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="@string/general_knowledge"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_general_knowledge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/geography_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_geography"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Geography"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_geography"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/history_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="History"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/japanese_anime_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_anime_manga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Japanese Anime &amp; Manga"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_anime_manga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/music_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_music"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+
+                        android:backgroundTint="#FFFFFF"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Music"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_music"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+                            android:padding="6dp"
+                            android:src="@drawable/musical_theater_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_musical_theaters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Musical &amp; Theaters"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_musical_theaters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/mythology_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_mythology"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Mythology"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_mythology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/politics_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_politics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Politics"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_politics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/computers_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_science_computers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Science: Computers"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_science_computers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/gadgets_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_science_gadgets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Science: Gadgets"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_science_gadgets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/mathematics_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_science_mathematics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Science: Mathematics"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_science_mathematics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/science_nature_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_science_nature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Science: Nature"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_science_nature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/sports_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_sports"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Sports"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_sports"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/television_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_television"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Television"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_television"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/vehicles_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_vehicles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Vehicles"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_vehicles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:translationZ="10dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="center"
+                            android:src="@drawable/circle" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:translationZ="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/videogames_icon" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/button_c_ent_video_games"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#FFFFFF"
+
+                        android:fontFamily="@font/happy_monkey"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:onClick="buttonClicked"
+                        android:padding="8dp"
+                        android:soundEffectsEnabled="false"
+                        android:text="Video Games"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView_check_video_games"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/check_circle_icon"
+                        android:translationZ="10dp" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

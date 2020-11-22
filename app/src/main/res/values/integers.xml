@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="progress_bar_max">37</integer>
+    <integer name="question_max_score">120</integer>
+    <integer name="progress_bar_value">37</integer>
+
+</resources>
